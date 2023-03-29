@@ -11,7 +11,7 @@ CORS(app, resources={"*": {"origins": "http://localhost:9300"}})
 
 
 def page_not_found(error):
-    return "<h1>Not found page</h1>", 404
+    return "<h1>Pagina no encontrada</h1>", 404
 
 PORT = 3200
 HOST = '0.0.0.0'
