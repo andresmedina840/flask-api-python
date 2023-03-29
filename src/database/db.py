@@ -11,5 +11,6 @@ def get_connection():
             password=config('PGSQL_PASSWORD'),
             database=config('PGSQL_DATABASE')
         )
+        print("locadas")
     except DatabaseError as ex:
         raise ex
