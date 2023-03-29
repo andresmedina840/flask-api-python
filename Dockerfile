@@ -1,7 +1,5 @@
 FROM alpine:latest
-RUN apt-get install python3-pip
-RUN apk add --no-cache python3-dev \ 
-    && pip3 install --upgrade pip
+RUN apk add --no-cache python3-dev
 WORKDIR /app
 COPY . /app
 RUN pip --version
