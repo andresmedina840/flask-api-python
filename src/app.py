@@ -9,19 +9,17 @@ app = Flask(__name__)
 
 CORS(app, resources={"*": {"origins": "http://localhost:9300"}})
 
-
 def page_not_found(error):
     return "<h1>Pagina no encontrada</h1>", 404
 
-PORT = 3200
-HOST = '0.0.0.0'
-
 if __name__ == '__main__':
     app.config.from_object(config['development'])
+
+    print(config['development'])
 
     # Blueprints
     app.register_blueprint(Movie.main, url_prefix='/api/movies')
 
     # Error handlers
     app.register_error_handler(404, page_not_found)
-    app.run()
+    app.run(host="localhost")
