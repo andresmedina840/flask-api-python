@@ -1,13 +1,15 @@
-# Sets the base image for subsequent instructions
-FROM ubuntu:18.04
-# Sets the working directory in the container  
+FROM alpine:latest
+
+RUN apk add --no-cache python3-dev \
+    && python3 -m ensurepip \
+    && pip3 install --upgrade pip
+
 WORKDIR /app
-RUN apt-get update -y
-RUN apt-get install -y python-pip python-dev
-# Copies the files to the working directory
-# Install dependencies
-RUN pip install -r requirements.txt
-# Copies everything to the working directory
+
 COPY . /app
-# Command to run on container start    
-CMD [ "python" , "./src/app.py" ]
+
+RUN pip3 --no-cache-dir install -r requirements.txt
+
+EXPOSE 5000
+
+CMD ["python3", "/src/app.py"]
