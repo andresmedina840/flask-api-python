@@ -23,7 +23,7 @@ Crear un archivo .env (en la raíz del proyecto) para las variables de entorno:
 
 Descarga de PostgreSQL: https://www.postgresql.org/download/
 <br/>
-Descarga de Insomnia: https://insomnia.rest/download
+Descargar de Postman: https://www.postman.com/downloads/
 
 <hr/>
 
