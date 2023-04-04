@@ -8,11 +8,9 @@ RUN pip3 install --upgrade pip
 
 FROM python as server
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY requirements.txt .
-
-COPY . .
+COPY . /app
 
 RUN pip3 --no-cache-dir install -r requirements.txt
 
@@ -23,7 +21,5 @@ ENV FLASK_DEBUG=0
 ENV FLASK_RUN_HOST=0.0.0.0
 
 EXPOSE 5000
-
-RUN sed -i 's/TLSv1.2/TLSv1.0/g' /etc/ssl/openssl.cnf
 
 CMD [ "flask", "run" ]
