@@ -1,12 +1,11 @@
-FROM alpine:latest
+FROM python:3.11.2
 
-RUN apk add --no-cache python3-dev \
-    && python3 -m ensurepip \
-    && pip3 install --upgrade pip
+RUN pip install --upgrade pip \
+    && mkdir /app
+
+ADD . /app
 
 WORKDIR /app
-
-COPY . /app
 
 RUN /bin/sh -c pip3 --no-cache-dir install -r requirements.txt
 
