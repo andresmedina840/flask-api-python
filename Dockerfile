@@ -9,7 +9,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pip install --no-cache-dir --upgrade -r requeriments.txt
+RUN /bin/sh -c pip3 --no-cache-dir install -r requirements.txt
 
 ENV SECRET_KEY=mysecretkey
 ENV PGSQL_HOST=150.136.169.25
