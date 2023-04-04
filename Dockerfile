@@ -3,9 +3,9 @@ FROM python:3.11.2
 RUN pip install --upgrade pip \
     && mkdir /app
 
-ADD . /app
-
 WORKDIR /app
+
+COPY . /app
 
 RUN /bin/sh -c pip3 --no-cache-dir install -r requirements.txt
 
