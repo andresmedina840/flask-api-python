@@ -5,7 +5,7 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    DB_SERVER = 'localhost'
+    DB_SERVER = '150.136.169.25'
 
 class ProductionConfig(Config):
     DB_SERVER = '150.136.169.25'

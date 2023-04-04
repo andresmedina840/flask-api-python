@@ -7,7 +7,7 @@ from routes import Movie
 
 app = Flask(__name__)
 
-CORS(app, resources={"*": {"origins": "http://localhost:9300"}})
+CORS(app, resources={"*": {"origins": "http://150.136.169.25:9300"}})
 
 def page_not_found(error):
     return "<h1>Pagina no encontrada</h1>", 404
