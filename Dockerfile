@@ -22,9 +22,9 @@ COPY requirements.txt .
 
 COPY . .
 
-RUN pip3 --no-cache-dir install -r requirements.txt
+RUN /bin/sh -c pip3 --no-cache-dir install -r requirements.txt
 
-ENV FLASK_APP=main.py
+ENV FLASK_APP=src/main.py
 
 ENV FLASK_DEBUG=0
 
