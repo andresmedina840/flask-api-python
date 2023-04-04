@@ -1,11 +1,4 @@
-FROM python:3.10.8-slim-buster as python
-
-RUN apt-get update
-RUN apt-get update && apt-get install -y wkhtmltopdf
-RUN apt-get update && apt-get install -y gnupg2
-RUN apt-get install -y curl apt-transport-https
-RUN apt-get update
-
+FROM python:3.11.2 as python
 
 ENV VIRTUAL_ENV=/opt/venv
 RUN python3 -m venv $VIRTUAL_ENV
