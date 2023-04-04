@@ -30,8 +30,6 @@ ENV FLASK_DEBUG=0
 
 ENV FLASK_RUN_HOST=0.0.0.0
 
-EXPOSE 5216
-
-RUN sed -i 's/TLSv1.2/TLSv1.0/g' /etc/ssl/openssl.cnf
+EXPOSE 5000
 
 CMD [ "flask", "run" ]
