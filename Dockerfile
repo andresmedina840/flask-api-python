@@ -1,4 +1,4 @@
-FROM python3.11.2 as python
+FROM python:3.11.2
 
 RUN apt-get update
 RUN apt-get update && apt-get install -y wkhtmltopdf
