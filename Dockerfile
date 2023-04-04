@@ -1,6 +1,6 @@
 FROM python:3.11.2 as python
 
-ENV VIRTUAL_ENV=/opt/venv
+ENV VIRTUAL_ENV=/docker/api_flask/flask-api-python
 RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
