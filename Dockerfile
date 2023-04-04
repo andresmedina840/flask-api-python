@@ -1,28 +1,6 @@
-FROM python:3.11.2 as python
-
-ENV VIRTUAL_ENV=/docker/api_flask/flask-api-python
-RUN python3 -m venv $VIRTUAL_ENV
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
-
-RUN pip3 install --upgrade pip
-
-
-FROM python as server
-
+FROM python:3
+COPY . /usr/src/app
+COPY requirements.txt /usr/src/app/requirements.txt
 WORKDIR /usr/src/app
-
-COPY requirements.txt .
-
-COPY . .
-
-RUN /bin/sh -c pip3 --no-cache-dir install -r requirements.txt
-
-ENV FLASK_APP=src/main.py
-
-ENV FLASK_DEBUG=0
-
-ENV FLASK_RUN_HOST=0.0.0.0
-
-EXPOSE 5000
-
-CMD [ "flask", "run" ]
+RUN pip install -r requirements.txt
+CMD ["python3", "/src/app.py"]
