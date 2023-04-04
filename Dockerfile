@@ -8,14 +8,18 @@ RUN pip3 install --upgrade pip
 
 FROM python as server
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY . /app
+COPY requirements.txt .
+
+COPY . .
 
 RUN pip3 --no-cache-dir install -r requirements.txt
 
 ENV FLASK_APP=src/main.py
-ENV FLASK_DEBUG=1
+
+ENV FLASK_DEBUG=0
+
 ENV FLASK_RUN_HOST=0.0.0.0
 
 EXPOSE 5000
